@@ -6,5 +6,4 @@ apt_repository 'erlang_solutions_repo' do
   action :add
 end
 
-execute 'apt-get -y update'
 package 'erlang'
