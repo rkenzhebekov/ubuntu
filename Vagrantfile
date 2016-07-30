@@ -73,5 +73,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe "erlang"
+    chef.add_recipe "git"
   end
+
+  config.ssh.forward_agent = true
+
+  config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
 end
